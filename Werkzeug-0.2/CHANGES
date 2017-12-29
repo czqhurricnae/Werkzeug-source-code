@@ -1,0 +1,53 @@
+Werkzeug Changelog
+==================
+
+
+Version 0.2
+-----------
+(codename Faustkeil, estimated release date Feb 14th 2008)
+
+- Added `AnyConverter` to the routing system.
+- Added `werkzeug.contrib.securecookie`
+- Exceptions have a ``get_response()`` method that return a resposne object
+- fixed the path ordering bug (#293), thanks Thomas Johansson
+- `BaseReporterStream` is now part of the werkzeug contrib module.  With
+  Werkzeug 0.3 onwards you will have to import it from there.
+- added `DispatcherMiddleware`.
+- `RequestRedirect` is now a subclass of `HTTPException` and uses a
+  301 status code instead of 302.
+- `url_encode` and `url_decode` can optionally treat keys as unicode strings
+  now too.
+- `werkzeug.script` has a different caller format for boolean arguments now.
+- renamed `lazy_property` to `cached_property`.
+- added `import_string`.
+- added is_* properties to request objects.
+- added `empty()` method to routing rules.
+- added `werkzeug.contrib.profiler`.
+- added `extends` to `Headers`.
+- added `dump_cookie` and `parse_cookie`.
+- added `as_tuple` to the `Client`.
+- added `werkzeug.contrib.testtools`.
+- added `werkzeug.unescape`
+- added `BaseResponse.freeze`
+- added `werkzeug.contrib.atom`
+- the HTTPExceptions accept an argument `description` now which overrides the
+  default description.
+- the `MapAdapter` has a default for path info now.  If you use
+  `bind_to_environ` you don't have to pass the path later.
+- the wsgiref subclass werkzeug uses for the dev server does not use direct
+  sys.stderr logging any more but a logger called "werkzeug".
+- implemented `Href`.
+- implemented `find_modules`
+- refactored request and response objects into base objects, mixins and
+  full featured subclasses that implement all mixins.
+- added simple user agent parser
+- werkzeug's routing raises `MethodNotAllowed` now if it matches a
+  rule but for a different method.
+- many fixes and small improvements
+
+
+Version 0.1
+-----------
+(codename Wictorinoxger, released Dec 9th 2007)
+
+- Initial release

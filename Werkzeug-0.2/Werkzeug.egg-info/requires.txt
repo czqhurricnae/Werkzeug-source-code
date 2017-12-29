@@ -1,0 +1,7 @@
+
+
+[wsgiref]
+wsgiref
+
+[plugin]
+setuptools>=0.6a2
